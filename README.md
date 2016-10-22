@@ -1,5 +1,6 @@
 # dirkwood_dragons
-One paragraph of project description goes here.
+
+Our project is to create a simple 2D platform game akin to old Castlevania or Metroid. 
 
 ## Getting Started
 
@@ -7,43 +8,31 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
-`Give examples`
+To get a copy of the project up and running, you will need Unity. You can download Unity from their site here: https://unity3d.com/get-unity/download
 
 ### Installing
 
 A step by step series of examples that tell you have to get a development env running
 
-Say what the step will be
+Fork and clone the repo to your desktop
 
-`Give the example`
+`git clone <repo url>`
 
-And repeat
+Install and open Unity
 
-`until finished`
+Select the project repo as your Unity project
 
-End with an example of getting some data out of the system or using it for a little demo
+Get started working on project!
+
+You can test your current version by pushing the play button
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-`Give an example`
-
-### And coding style tests
-
-Explain what these tests test and why
-
-`Give an example`
+Automated tests are yet to be created
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Deploy the project on a live system by following these instructions: https://unity3d.com/unity/multiplatform
 
 ## Built With
 
@@ -55,8 +44,9 @@ Please read CONTRIBUTING.md for details on our code of conduct, and the process 
 
 ## Authors
 
-* Kathryn Lovett
-* Chris Lynch
+* Kathryn Lovett - _Creator_
+* Chris Lynch - _Creator_
+* Jennifer Schumaker - _Artist_
 
 ## License 
 
