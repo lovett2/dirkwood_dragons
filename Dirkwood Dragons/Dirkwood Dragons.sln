@@ -1,14 +1,18 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-
+Project("{B71946FE-574C-758A-DAA4-D1C3898B78E2}") = "Dirkwood Dragons", "Assembly-CSharp.csproj", "{7ED4C34D-98CB-5C58-F7CC-F7BF8DF063B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-
+		{7ED4C34D-98CB-5C58-F7CC-F7BF8DF063B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ED4C34D-98CB-5C58-F7CC-F7BF8DF063B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ED4C34D-98CB-5C58-F7CC-F7BF8DF063B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ED4C34D-98CB-5C58-F7CC-F7BF8DF063B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
