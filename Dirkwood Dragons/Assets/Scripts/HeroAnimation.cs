@@ -25,10 +25,10 @@ public class HeroAnimation : MonoBehaviour {
 	void Update () {
 
 		grounded = Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
-
-//		if (Input.GetButtonDown ("Jump") && grounded) {
-//			jump = true;
-//		}
+		Debug.Log (grounded);
+		if (Input.GetButtonDown ("Jump") && grounded) {
+			jump = true;
+		}
 			
 	}
 
@@ -36,19 +36,19 @@ public class HeroAnimation : MonoBehaviour {
 		float h = Input.GetAxis ("Horizontal");
 		anim.SetFloat ("speed", Mathf.Abs (h));
 
-		rb2d.velocity = new Vector2 (h, rb2d.velocity.y);
-//		if (h * rb2d.velocity.x < maxSpeed)
-//			rb2d.AddForce (Vector2.right * h * moveForce);
-//		if (Mathf.Abs (rb2d.velocity.x) > maxSpeed)
-//			rb2d.velocity = new Vector2 (Mathf.Sign (rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
+//		rb2d.velocity = new Vector2 (h, rb2d.velocity.y);
+		if (h * rb2d.velocity.x < maxSpeed)
+			rb2d.AddForce (Vector2.right * h * moveForce);
+		if (Mathf.Abs (rb2d.velocity.x) > maxSpeed)
+			rb2d.velocity = new Vector2 (Mathf.Sign (rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
 		if (h > 0 && !facingRight)
 			Flip ();
 		else if (h < 0 && facingRight)
 			Flip();
 
 		if (jump) {
-			//anim.SetTrigger ("Jump");
-			rb2d.AddForce (new Vector2 (0f, jumpForce));
+			anim.SetTrigger ("Jump");
+			rb2d.AddForce (new Vector3 (h, jumpForce, 0f));
 			jump = false;
 		}
 	}
