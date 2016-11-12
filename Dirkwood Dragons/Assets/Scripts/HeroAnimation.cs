@@ -6,7 +6,7 @@ public class HeroAnimation : MonoBehaviour {
 	[HideInInspector] public bool facingRight = true;
 	[HideInInspector] public bool jump = false;
 
-	public float moveForce = 365f;
+	public float moveForce = 10f;
 	public float maxSpeed = 5f;
 	public float jumpForce = 1000f;
 	public Transform groundCheck;
@@ -26,9 +26,9 @@ public class HeroAnimation : MonoBehaviour {
 
 		grounded = Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
 
-		if (Input.GetButtonDown ("Jump") && grounded) {
-			jump = true;
-		}
+//		if (Input.GetButtonDown ("Jump") && grounded) {
+//			jump = true;
+//		}
 			
 	}
 
@@ -36,10 +36,11 @@ public class HeroAnimation : MonoBehaviour {
 		float h = Input.GetAxis ("Horizontal");
 		anim.SetFloat ("speed", Mathf.Abs (h));
 
-		if (h * rb2d.velocity.x < maxSpeed)
-			rb2d.AddForce (Vector2.right * h * moveForce);
-		if (Mathf.Abs (rb2d.velocity.x) > maxSpeed)
-			rb2d.velocity = new Vector2 (Mathf.Sign (rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
+		rb2d.velocity = new Vector2 (h, rb2d.velocity.y);
+//		if (h * rb2d.velocity.x < maxSpeed)
+//			rb2d.AddForce (Vector2.right * h * moveForce);
+//		if (Mathf.Abs (rb2d.velocity.x) > maxSpeed)
+//			rb2d.velocity = new Vector2 (Mathf.Sign (rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
 		if (h > 0 && !facingRight)
 			Flip ();
 		else if (h < 0 && facingRight)
