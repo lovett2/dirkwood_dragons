@@ -29,11 +29,12 @@ public class HeroAnimation : MonoBehaviour {
 		if (Input.GetButtonDown ("Jump") && grounded) {
 			jump = true;
 		}
+			
 	}
 
 	void FixedUpdate() {
 		float h = Input.GetAxis ("Horizontal");
-		anim.SetFloat ("Speed", Mathf.Abs (h));
+		anim.SetFloat ("speed", Mathf.Abs (h));
 
 		if (h * rb2d.velocity.x < maxSpeed)
 			rb2d.AddForce (Vector2.right * h * moveForce);
@@ -45,7 +46,7 @@ public class HeroAnimation : MonoBehaviour {
 			Flip();
 
 		if (jump) {
-			anim.SetTrigger ("Jump");
+			//anim.SetTrigger ("Jump");
 			rb2d.AddForce (new Vector2 (0f, jumpForce));
 			jump = false;
 		}
