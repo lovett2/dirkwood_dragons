@@ -83,7 +83,8 @@
 -define:UNITY_EDITOR_OSX
 -define:UNITY_TEAM_LICENSE
 'Assets/Movement.cs'
-'Assets/Scripts/GoblinController.cs'
+'Assets/Scripts/Goblin.cs'
 'Assets/Scripts/HeroAnimation.cs'
+'Assets/Scripts/MovingObject.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Xml.Linq.dll'

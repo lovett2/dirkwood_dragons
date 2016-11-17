@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GoblinController : MonoBehaviour {
+public abstract class MovingObject: MonoBehaviour {
 
 	public float moveTime = 0.1f;          //Time it will take object to move, in seconds.
 	public LayerMask blockingLayer;        //Layer on which collision will be checked.
