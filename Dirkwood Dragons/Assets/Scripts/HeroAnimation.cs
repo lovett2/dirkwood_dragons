@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HeroAnimation : MovingObject {
+public class HeroAnimation : MonoBehaviour {
 
 	[HideInInspector] public bool facingRight = true;
 	[HideInInspector] public bool jump = false;
@@ -16,7 +16,7 @@ public class HeroAnimation : MovingObject {
 	private Rigidbody2D rb2d;
 
 	// Use this for initialization
-	protected override void Start () {
+	void Start () {
 		anim = GetComponent<Animator>();
 		rb2d = GetComponent<Rigidbody2D>();
 	}
@@ -64,6 +64,7 @@ public class HeroAnimation : MovingObject {
 	public void LoseHealth (int loss) {
 		//To be implemented: allows player to take loss when attacked by enemy (goblin)
 
+		Debug.Log ("Losing Health!");
 
 		//Set the trigger for the player animator to transition to the playerHit animation.
 		//anim.SetTrigger ("playerHit");
@@ -75,7 +76,7 @@ public class HeroAnimation : MovingObject {
 		//CheckIfGameOver();
 	}
 
-	protected override void OnCantMove <T> (T component) {
+	//protected override void OnCantMove <T> (T component) {
 		//To be implemented: allows player to break through walls
 
 		//Set hitWall to equal the component passed in as a parameter.
@@ -86,5 +87,5 @@ public class HeroAnimation : MovingObject {
 
 		//Set the attack trigger of the player's animation controller in order to play the player's attack animation.
 		//animator.SetTrigger ("playerChop");
-	}
+	//}
 }
