@@ -8,7 +8,7 @@ public class HeroAnimation : MonoBehaviour {
 
 	public float moveForce = 10f;
 	public float maxSpeed = 5f;
-	public float jumpForce = 1000f;
+	public float jumpForce = 15f;
 	public Transform groundCheck;
 
 	private bool grounded = false;
@@ -25,19 +25,23 @@ public class HeroAnimation : MonoBehaviour {
 	void Update () {
 
 		grounded = Physics2D.Linecast (transform.position, groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
-		Debug.Log (grounded);
+		//Debug.Log (grounded);
 
-		if (Input.GetButtonDown ("Jump") && grounded) {
-			jump = true;
-		}
+
 			
 	}
 
 	void FixedUpdate() {
 		float h = Input.GetAxis ("Horizontal");
 		anim.SetFloat ("speed", Mathf.Abs (h));
+		//Debug.Log (Input.GetAxis ("Horizontal"));
 
-		rb2d.velocity = new Vector2 (h, rb2d.velocity.y);
+		if (Input.GetButtonDown ("Jump") ) {
+			jump = true;
+		}
+
+		Debug.Log (jump);
+		rb2d.AddForce(new Vector2 (h, 0));
 //		if (h * rb2d.velocity.x < maxSpeed)
 //			rb2d.AddForce (Vector2.right * h * moveForce);
 //		if (Mathf.Abs (rb2d.velocity.x) > maxSpeed)
@@ -49,9 +53,11 @@ public class HeroAnimation : MonoBehaviour {
 
 		if (jump) {
 			anim.SetTrigger ("Jump");
-			rb2d.AddForce (new Vector3 (h, jumpForce, 0f));
+			rb2d.AddForce (new Vector2 (0, jumpForce));
 			jump = false;
 		}
+
+		//rb2d.AddForce(new Vector2(h, v));
 	}
 
 	void Flip() {
